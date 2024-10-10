@@ -1,7 +1,7 @@
 import queryString from "query-string";
 
 /**
- * 
+ * Returns all linked symbols to the provided symbol, anything with the same characters as the provided symbol
  * @param symbol symbol used in the trading api to represent a stock
  * @returns All linked symbols to the provided symbol
  */
