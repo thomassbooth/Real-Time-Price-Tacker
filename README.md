@@ -1,14 +1,14 @@
 # Realtime-pricetracker
 
 ## Getting Started
-# Setting up env
+### Setting up env
 
 Setup the finnhub api, signup and retrieve your free api key and populate .env inside /price-tracker
 ```bash
 NEXT_PUBLIC_API_KEY=yourapikey
 ```
 
-# Running development server
+### Running development server
 
 ```bash
 npm run dev
@@ -22,7 +22,7 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-# Building the server
+### Building the server
 
 ```bash
 
