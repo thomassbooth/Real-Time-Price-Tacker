@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Navbar from '../src/components/Navbar'; // Adjust the import as necessary
+import Navbar from '../../src/components/Navbar'; // Adjust the import as necessary
 import '@testing-library/jest-dom';
 
 

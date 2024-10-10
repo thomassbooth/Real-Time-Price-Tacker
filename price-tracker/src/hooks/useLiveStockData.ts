@@ -47,7 +47,7 @@ const useLiveStockData = (symbol: string, initalData: initialStockData) => {
         socket.close();
       }
     };
-  }, [symbol]); // Re-run when the symbol changes
+  }, [symbol, ws]); // Re-run when the symbol changes
 
   return {
     stockData

@@ -1,11 +1,11 @@
 import { getMarketStatus } from "@/actions/getMarketStatus";
-import { fetchStockList } from "@/actions/getStockPrices";
+import { getStockPrices } from "@/actions/getStockPrices";
 import MarketStatus from "@/components/MarketStatus";
 import StockTable from "@/components/StockTable";
 
 export default async function Home() {
   const marketStatus = await getMarketStatus();
-  const stocks = await fetchStockList();
+  const stocks = await getStockPrices();
   
 
   return (

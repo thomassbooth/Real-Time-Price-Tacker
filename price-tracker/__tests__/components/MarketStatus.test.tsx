@@ -1,7 +1,7 @@
 import React from "react";
 import '@testing-library/jest-dom';
 import { render, screen } from "@testing-library/react";
-import MarketStatus from "../src/components/MarketStatus"; // Adjust the path as necessary
+import MarketStatus from "../../src/components/MarketStatus"; // Adjust the path as necessary
 
 describe("MarketStatus Component", () => {
   it("renders 'Open' when status is true", () => {
@@ -11,7 +11,7 @@ describe("MarketStatus Component", () => {
     expect(screen.getByText("Market Status:")).toBeInTheDocument();
     expect(screen.getByText("Open")).toBeInTheDocument();
 
-    // Check for the correct class applied for open status
+    // Check for the correct class
     const statusSpan = screen.getByText("Open").closest("span");
     expect(statusSpan).toHaveClass("font-semibold");
     expect(statusSpan).toHaveClass("text-green-700");

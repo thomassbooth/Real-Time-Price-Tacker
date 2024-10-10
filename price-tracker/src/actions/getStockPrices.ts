@@ -2,7 +2,7 @@
  * Fetches 10 Stock data for the US exchange.
  * @returns Promise, list of the top 10 stocks from Finnhub.
  */
-export const fetchStockList = async () => {
+export const getStockPrices = async () => {
   const apiKey = process.env.NEXT_PUBLIC_API_KEY as string;
   try {
     const response = await fetch(

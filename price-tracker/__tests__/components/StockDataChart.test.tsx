@@ -7,7 +7,7 @@ import useLiveStockData from '@/hooks/useLiveStockData';
 import React from 'react';
 
 // Mock the custom hook
-jest.mock('../src/hooks/useLiveStockData');
+jest.mock('../../src/hooks/useLiveStockData');
 
 
 // Polyfill for ResizeObserver
@@ -18,9 +18,9 @@ global.ResizeObserver = class {
   };
   
 const mockStockData = [
-  { t: 1640995200000, c: 100 }, // January 1, 2022
-  { t: 1641081600000, c: 105 }, // January 2, 2022
-  { t: 1641168000000, c: 110 }, // January 3, 2022
+  { t: 1640995200000, c: 100 },
+  { t: 1641081600000, c: 105 },
+  { t: 1641168000000, c: 110 },
 ];
 
 const mockInitialStockData: initialStockData = {

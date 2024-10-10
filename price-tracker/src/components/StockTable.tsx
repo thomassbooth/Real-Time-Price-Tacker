@@ -21,7 +21,7 @@ const StockTable: React.FC<stockTableProps> = ({ data }) => {
     const router = useRouter()
     const navigate = useCallback((symbol: string) => {
         router.push(`/${symbol}`)
-    }, [])
+    }, [router])
 
   return (
     <Table>

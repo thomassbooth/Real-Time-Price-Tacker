@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom";
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
-import StockTable from "../src/components/StockTable"; // Adjust the import path as necessary
+import StockTable from "../../src/components/StockTable"; // Adjust the import path as necessary
 import { useRouter } from "next/navigation";
 
 // Mock the Next.js router
@@ -42,6 +42,7 @@ describe("StockTable", () => {
     push: mockPush,
   };
 
+  // mock useRouter
   beforeEach(() => {
     (useRouter as jest.Mock).mockReturnValue(mockRouter);
   });
