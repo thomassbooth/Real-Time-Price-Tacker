@@ -2,16 +2,15 @@ import { initialStockData, StockData } from "@/lib/types";
 import { useEffect, useState } from "react";
 
 const useLiveStockData = (symbol: string, initalData: initialStockData) => {
-  const [ws, setWs] = useState<WebSocket | null>(null);
-
   const [stockData, setStockData] = useState<StockData[]>([
     { c: initalData.c, t: initalData.t },
   ]);
 
   useEffect(() => {
     // Create the WebSocket connection when the component mounts or when the symbol changes
+    const apiKey = process.env.NEXT_PUBLIC_API_KEY;
     const socket = new WebSocket(
-      `wss://ws.finnhub.io?token=${"cs34b89r01qk1hus047gcs34b89r01qk1hus0480"}`
+      `wss://ws.finnhub.io?token=${apiKey}`
     );
 
     socket.onopen = () => {
@@ -37,7 +36,6 @@ const useLiveStockData = (symbol: string, initalData: initialStockData) => {
       console.log("WebSocket connection closed");
     };
 
-    setWs(socket);
 
     // Cleanup WebSocket connection when component unmounts or symbol changes
     return () => {
@@ -47,7 +45,7 @@ const useLiveStockData = (symbol: string, initalData: initialStockData) => {
         socket.close();
       }
     };
-  }, [symbol, ws]); // Re-run when the symbol changes
+  }, [symbol]); // Re-run when the symbol changes
 
   return {
     stockData
